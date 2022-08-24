@@ -26,4 +26,8 @@ class Venue
 
     end
 
+    def over_capacity
+        @patrons.length > @capacity
+    end
+
 end
