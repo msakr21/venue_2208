@@ -30,10 +30,27 @@ class Venue
         @patrons.length > @capacity
     end
 
+
+    
+    
+
     def kick_out
-        if @patrons.length > @capacity
-        @patrons.pop
+        
+        
+        patron_count = 0
+
+
+        @patrons.each do|patron|
+           patron_count = patron_count + 1
         end
+
+        over_amount = patron_count - @capacity
+
+        if patron_count > @capacity
+            @patrons.pop(over_amount)
+        end
+
+
     end
 
 end

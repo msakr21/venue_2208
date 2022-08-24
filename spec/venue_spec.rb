@@ -84,12 +84,17 @@ describe Venue do
     venue.add_patron('Bob')
     venue.add_patron('James')
     venue.add_patron('Cat')
+    venue.add_patron('Dog')
+    venue.add_patron('Mouse')
 
 
-
-    expect(venue.kick_out).to eq 'Cat' 
     #from errors learned pop method returns element ejected from array but not as an array.
+    
+    expect(venue.kick_out).to eq ['Cat', 'Dog', 'Mouse']
 
+    #tested by changing .to eq array value above, and adding/removing more patrons
+
+  
     expect(venue.patrons).to eq ['Mike', 'Megan', 'Bob', 'James']
     
     expect(venue.over_capacity).to eq FALSE
