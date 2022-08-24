@@ -75,8 +75,8 @@ describe Venue do
 
   #Iteration 4
 
-  describe '#over_capacity' do
-    it 'returns true if over capacity' do
+  describe '#kick_out' do
+    it 'removes newer patrons if over capacity until down to full capacity' do
     #skip
     venue = Venue.new('Bluebird', 4)
     venue.add_patron('Mike')
@@ -85,7 +85,15 @@ describe Venue do
     venue.add_patron('James')
     venue.add_patron('Cat')
 
-  
- 
 
+
+    expect(venue.kick_out).to eq 'Cat' 
+    #from errors learned pop method returns element ejected from array but not as an array.
+
+    expect(venue.patrons).to eq ['Mike', 'Megan', 'Bob', 'James']
+    
+    expect(venue.over_capacity).to eq FALSE
+    end
+  end
+ 
 end

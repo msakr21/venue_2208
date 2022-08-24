@@ -30,4 +30,10 @@ class Venue
         @patrons.length > @capacity
     end
 
+    def kick_out
+        if @patrons.length > @capacity
+        @patrons.pop
+        end
+    end
+
 end
