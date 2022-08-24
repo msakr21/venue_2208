@@ -66,9 +66,8 @@ describe Venue do
     expect(venue.over_capacity).to eq FALSE
 
     venue.add_patron('Ahmed')
-
     expect(venue.over_capacity).to eq FALSE
-    
+
     venue.add_patron('Erin')
     expect(venue.over_capacity).to eq TRUE
     end
